@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class reverseDataRecursive {
   public static class Node {
@@ -393,7 +392,6 @@ public class reverseDataRecursive {
     }
 
     public void reverseDR(){
-      // write your code here
       left=head;
       reverseDRHelper(head,0); 
     }

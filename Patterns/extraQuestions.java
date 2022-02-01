@@ -1,12 +1,13 @@
+package Patterns;
 // pattern21
 import java.util.*;
-   public class p{
+   public class extraQuestions{
    public static void main(String[] args) {
       Scanner scn=new Scanner(System.in);
       int n=scn.nextInt();
       int i,j;
       for(i=0;i<2*n-1;i++){
-        int count=n;
+        // int count=n;
         for(j=0;j<2*n-1;j++){
         if(i<=n-1){  
             System.out.print("*\t");
@@ -27,7 +28,7 @@ import java.util.*;
       }
     }
    }
-
+  }
 // pattern23
 //    for n = 3
 // Ques 3)

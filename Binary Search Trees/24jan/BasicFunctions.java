@@ -129,7 +129,51 @@ public class BasicFunctions {
       return true;
     }
   }
+/*  rajneesh sir method
+ // T : O(n), S : O(1)
+    public static int size(Node node) {
+        return node == null ? 0 : size(node.left) + size(node.right) + 1;
+    }
 
+    // T : O(n), S : O(1)
+    public static int hight(Node node) {
+        return node == null ? -1 : Math.max(hight(node.left), hight(node.right)) + 1;
+    }
+
+    // T : O(logn), S : O(1)
+    public static int maximum(Node node) {
+        while (node.right != null)
+            node = node.right;
+
+        return node.data;
+    }
+
+    // T : O(logn), S : O(1)
+    public static int minimum(Node node) {
+        while (node.left != null)
+            node = node.left;
+
+        return node.data;
+    }
+
+    // T : O(logn), S : O(1)
+    public static boolean find(Node node, int data) {
+        while (node != null) {
+            if (node.data == data)
+                return true;
+            else if (node.data < data)
+                node = node.right;
+            else
+                node = node.left;
+        }
+
+        return false;
+    }
+
+    public static int sum(Node node) {
+        return node == null ? 0 : sum(node.left) + sum(node.right) + node.data;
+    }
+*/
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int n = Integer.parseInt(br.readLine());

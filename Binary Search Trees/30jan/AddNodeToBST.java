@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class LowestCommonAncestor {
+public class AddNodeToBST {
   public static class Node {
     int data;
     Node left;
@@ -79,38 +79,21 @@ public class LowestCommonAncestor {
     display(node.right);
   }
 
-  public static int lca(Node node, int d1, int d2) {
-      if(node==null) {
-          return 0;
-      }
-      if(node.data > d1 && node.data > d2) {
-          return lca(node.left, d1, d2);
-      } 
-      else if(node.data < d1 && node.data < d2) {
-          return lca(node.right, d1, d2);
-      }
-      else {
-          return node.data;
-      }
-  }
-
-/*  rajneesh sir
-public static int lca(Node node, int d1, int d2) {
-        int lca = -1;
-        while (node != null) {
-            if (node.data < d1 && node.data < d2)
-                node = node.right;
-            else if (node.data > d1 && node.data > d2)
-                node = node.left;
-            else {
-                lca = node.data;
-                break;
-            }
-        }
-
-        return lca;
+  public static Node add(Node node, int data) {
+    if(node==null) {
+        return new Node(data, null, null);
     }
-*/
+    if(data>node.data) {
+        node.right = add(node.right, data);
+    }
+    else if(data<node.data) {
+        node.left = add(node.left, data);
+    }
+    else {
+        //already there, no need to do anything
+    }
+    return node;
+  }
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -125,12 +108,12 @@ public static int lca(Node node, int d1, int d2) {
       }
     }
 
-    int d1 = Integer.parseInt(br.readLine());
-    int d2 = Integer.parseInt(br.readLine());
+    int data = Integer.parseInt(br.readLine());
 
     Node root = construct(arr);
-    int lca = lca(root, d1, d2);
-    System.out.println(lca);
+    root = add(root, data);
+
+    display(root);
   }
 
 }

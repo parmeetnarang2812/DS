@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class brokenEconomy {
@@ -32,5 +31,7 @@ public class brokenEconomy {
     System.out.println();
     System.out.println(ceil);
     System.out.println(floor);
+
+    scn.close();
   }
 }
