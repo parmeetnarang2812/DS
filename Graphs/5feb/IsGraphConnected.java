@@ -57,10 +57,8 @@ public class Main {
             fillComp(graph, visited, v, comp);
             comps.add(comp);
          }
-      }
-
-
-      System.out.println(comps);
+      }   
+      System.out.println(comps.size()==1);
    }
 }
 */
