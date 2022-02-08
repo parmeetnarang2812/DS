@@ -15,6 +15,7 @@ public static class MyPriorityQueue {
     //     add(val);
     // }
     
+    //effecient
     //change it to add values in O(n) instead of O(nlogn)
       for(int val: arr){
           data.add(val);
