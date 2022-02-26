@@ -1,4 +1,4 @@
-/* 
+/*
 import java.io.*;
 import java.util.*;
 
@@ -24,7 +24,7 @@ public class Main {
         int[] span = solve(a);
         display(span);
     }
-
+        // method 1 -> front to back
     public static int[] solve(int[] arr) {
         int[] ans = new int[arr.length];
         Stack<Integer> st = new Stack<>();
@@ -46,5 +46,29 @@ public class Main {
         return ans;
     }
 
-} 
+        // method 2 -> back to front
+    // public static int[] solve(int[] arr){
+    //     int[] ans = new int[arr.length];
+    //     Stack<Integer> st = new Stack<>();
+        
+    //     st.push(arr.length-1);
+     
+    //     for(int i=arr.length-2; i>=0; i--) {
+    //       while(st.size()>0 && arr[st.peek()]<arr[i]) {
+    //         int pidx = st.pop();
+    //         ans[pidx] = pidx - i; 
+    //       }
+    //       st.push(i);
+    //     }
+     
+    //     while(st.size()>0) {
+    //       int pidx = st.pop();
+    //       ans[pidx] = pidx + 1;
+    //     }
+        
+    //     return ans;
+    //   }
+
+}
+
 */
