@@ -7,62 +7,60 @@ public class queue {
     private int front=0, back=0;
 
     // constructor
-    public stack() {
+    public queue() {
         this.initilize(5);
     }
 
-    public stack(int size) {
+    public queue(int size) {
         this.initilize(size);
     }
 
     public void initilize(int size) {
         this.arr = new int[size];
         this.sizeOfArray = size;
-        this.sizeOfStack = 0;
-        this.tos = -1;
+        this.sizeOfQueue = 0;
+        this.front= this.back=0;
     }
 
     // exceptions
-    private void stackOverflowException() throws Exception {
-        if (this.sizeOfArray == this.sizeOfStack)
-            throw new Exception("stackIsFull");
+    private void queueIsFullException() throws Exception {
+        if (this.sizeOfArray == this.sizeOfQueue)
+            throw new Exception("queueIsFull");
     }
 
-    private void stackUnderflowException() throws Exception {
-        if (this.sizeOfStack == 0)
-            throw new Exception("stackIsEmpty");
+    private void queueIsEmptyException() throws Exception {
+        if (this.sizeOfQueue == 0)
+            throw new Exception("queueIsEmpty");
     }
 
     // basic
     public boolean isEmpty() {
-        return this.sizeOfStack == 0;
+        return this.sizeOfQueue == 0;
     }
 
     public int size() {
-        return this.sizeOfStack;
+        return this.sizeOfQueue;
     }
 
     // functions
 
     public void push(int val) throws Exception {
-        stackOverflowException();
-        this.tos++;
-        this.arr[this.tos] = val;
-        this.sizeOfStack++;
+        this.arr[this.back] = val;
+        this.sizeOfQueue++;
+        this.back = (this.back + 1) % this.sizeOfArray;
     }
 
     public int pop() throws Exception {
-        stackUnderflowException();
-        int val = this.top();
-        this.arr[this.tos] = 0;
-        this.tos--;
-        this.sizeOfStack--;
+        int val = this.front();
+        this.arr[this.front] = 0;
+        this.sizeOfQueue--;
+        this.front = (this.front + 1) % this.sizeOfArray;
 
         return val;
     }
 
-    public int top() throws Exception {
-        stackUnderflowException();
-        return this.arr[this.tos];
+    public int front() throws Exception {
+        queueIsEmptyException();
+        return this.arr[this.front];
     }
 }
