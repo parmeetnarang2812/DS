@@ -42,6 +42,13 @@ public class queue {
         return this.sizeOfQueue;
     }
 
+    public void display(){
+        for(int i=0; i<this.sizeOfQueue; i++) {
+            int idx = (this.front + i) % this.sizeOfArray;
+            System.out.print(this.arr[this.idx] + " ");
+        }
+    }
+
     // functions
 
     public void push(int val) throws Exception {
