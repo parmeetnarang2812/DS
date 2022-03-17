@@ -1,3 +1,4 @@
+/* 
 public class queue {
 
     // class variables
@@ -71,3 +72,4 @@ public class queue {
         return this.arr[this.front];
     }
 }
+*/

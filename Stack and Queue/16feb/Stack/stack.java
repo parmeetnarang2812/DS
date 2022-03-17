@@ -8,18 +8,22 @@ public class stack {
 
     // constructor
     public stack() {
-        this.initilize(5);
+        this.initialize(5);
     }
 
     public stack(int size) {
-        this.initilize(size);
+        this.initialize(size);
     }
 
-    public void initilize(int size) {
+    public void initialize(int size) {
         this.arr = new int[size];
         this.sizeOfArray = size;
         this.sizeOfStack = 0;
         this.tos = -1;
+    }
+
+    protected int sizeOfArray(){
+        return this.sizeOfArray;
     }
 
     // exceptions
