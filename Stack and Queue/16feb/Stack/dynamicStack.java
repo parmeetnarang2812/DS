@@ -1,3 +1,4 @@
+/* 
 public class dynamicStack extends stack{    //public functions of stack class(stack.java) are included here except the ctors.
     public dynamicStack(int size) {
         super(size);
@@ -24,4 +25,5 @@ public class dynamicStack extends stack{    //public functions of stack class(st
         super.push(val);
     }
 
-}
+} 
+*/

@@ -1,4 +1,4 @@
-
+/* 
 public class client {
     public static void main (String[] args) throws Exception{
         dynamicStack st = new dynamicStack();
@@ -9,4 +9,5 @@ public class client {
         while (st.size() != 0)
             System.out.print(st.pop() + " ");
     }
-} 
+}  
+*/
