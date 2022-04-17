@@ -40,4 +40,5 @@ public class Main {
         }
         maze[sr][sc] = 0;
     }
+
 }
