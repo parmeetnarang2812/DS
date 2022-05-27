@@ -1,4 +1,4 @@
-import java.io.*;
+/* import java.io.*;
 import java.util.*;
 
 public class LevelOrder {
@@ -79,10 +79,8 @@ public class LevelOrder {
     display(node.right);
   }
 
-  public static void levelOrder1(Node node) {
+  public static void levelOrder(Node node) {
     ArrayDeque<Node> pq = new ArrayDeque<>();
-    ArrayDeque<Node> cq = new ArrayDeque<>();
-
     pq.add(node);
 
     while (pq.size() > 0) {
@@ -90,20 +88,15 @@ public class LevelOrder {
       System.out.print(temp.data + " ");
 
       if (temp.left != null) {
-        cq.add(temp.left);
+        pq.add(temp.left);
       }
       if (temp.right != null) {
-        cq.add(temp.right);
-      }
-      if (pq.size() == 0) {
-        pq = cq;
-        cq = new ArrayDeque<>();
-        System.out.println();
+        pq.add(temp.right);
       }
     }
   }
 
-  public static void levelOrder2(Node node) {
+  public static void levelOrderLW(Node node) {
     ArrayDeque<Node> pq = new ArrayDeque<>();
     pq.add(node);
 
@@ -121,72 +114,8 @@ public class LevelOrder {
         }
       }
       System.out.println();
-
     }
   }
-
-  public static void levelOrder3(Node node) {
-    ArrayDeque<Node> pq = new ArrayDeque<>();
-    pq.add(node);
-
-    Node delimitor = new Node(-1, null, null);
-    pq.add(delimitor);
-    while (pq.size() > 0) {
-      Node temp = pq.remove();
-      if (temp.data == -1) {
-        System.out.println();
-        if (pq.size() > 0) {
-          pq.add(temp);
-        }
-        continue;
-      }
-      System.out.print(temp.data + " ");
-
-      if (temp.left != null) {
-        pq.add(temp.left);
-      }
-      if (temp.right != null) {
-        pq.add(temp.right);
-      }
-
-    }
-  }
-
-  static class Lpair {
-    int level;
-    Node node;
-  }
-
-  public static void levelOrder4(Node node) {
-    ArrayDeque<Lpair> q = new ArrayDeque<>();
-    Lpair rootp = new Lpair();
-    rootp.node = node;
-    rootp.level = 1;
-    q.add(rootp);
-
-    int level = 1;
-    while (q.size() > 0) {
-      Lpair temp = q.remove();
-      if (temp.level > level) {
-        level = temp.level;
-        System.out.println();
-      }
-      System.out.print(temp.node.data + " ");
-      if (temp.node.left != null) {
-        Lpair leftp = new Lpair();
-        leftp.node = temp.node.left;
-        leftp.level = temp.level+1;
-        q.add(leftp);
-      }
-      if (temp.node.right != null) {
-        Lpair rightp = new Lpair();
-        rightp.node = temp.node.right;
-        rightp.level = temp.level+1;
-        q.add(rightp);
-      }
-    }
-  }
-
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -202,7 +131,7 @@ public class LevelOrder {
     }
 
     Node root = construct(arr);
-    levelOrder4(root);
+    levelOrder(root);
   }
 
-}
+} */
